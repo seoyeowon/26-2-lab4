@@ -21,6 +21,10 @@ namespace Seoyeowon2649020{
             }
         }
     public:
+        dayOfYear(int m = 1, int d = 1): month { m }, day{ d } {
+            testMonth();
+            testDay();
+        }
         void input(){
             std::cout << "Enter the month as a number: ";
             std::cin >> month; testMonth();
@@ -31,7 +35,8 @@ namespace Seoyeowon2649020{
         void setMonth( int newMonth ) { month = newMonth; testMonth();}
         void setDay( int newDay ) { day = newDay; testDay();} 
 
-        void print() {
+        void print() const
+        {
             switch (month){
                 case 1: std::cout << "Jan."; break;
                 case 2: std::cout << "Feb."; break;
@@ -49,8 +54,8 @@ namespace Seoyeowon2649020{
             std::cout << day << std::endl;
         }
 
-        int getMonth() { return month; }
-        int getDay() { return day; }
+        int getMonth() const { return month; }
+        int getDay() const { return day; }
         
     };
 }
